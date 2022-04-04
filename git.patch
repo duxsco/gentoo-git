@@ -1,5 +1,5 @@
 diff --git a/lib/portage/sync/modules/git/git.py b/lib/portage/sync/modules/git/git.py
-index 98670e1..2f72510 100644
+index 98670e1f94e70a0c294273048ca33eaff002c2ac..2f7251095a87de742ae8870c22bc7227c8892bcc 100644
 --- a/lib/portage/sync/modules/git/git.py
 +++ b/lib/portage/sync/modules/git/git.py
 @@ -221,8 +221,8 @@ class GitSync(NewBase):
