@@ -92,3 +92,7 @@ qlist --installed app-portage/eix >/dev/null 2>&1 && \
 eix-sync ||
 emerge --sync
 ```
+
+## Other Gentoo Linux repos
+
+https://github.com/duxsco?tab=repositories&q=gentoo-
