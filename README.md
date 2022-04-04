@@ -12,7 +12,7 @@ Verify the patch (copy&paste one after the other):
 
 ```bash
 # Fetch the public key; ADJUST THE MAIL ADDRESS!
-gpg --homedir /tmp/gpgHomeDir --auto-key-locate clear,dane,wkd,hkps://keys.duxsco.de --locate-external-key d at "my github username" dot de
+gpg --auto-key-locate clear,dane,wkd,hkps://keys.duxsco.de --locate-external-key d at "my github username" dot de
 
 gpg --verify git.patch.sha512.asc git.patch.sha512
 
