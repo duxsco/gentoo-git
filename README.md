@@ -33,7 +33,7 @@ Install and harden `dev-vcs/git`:
 ```bash
 emerge --noreplace dev-vcs/git && \
 git config --system includeIf.gitdir:/var/db/repos/gentoo/.path /etc/portage/gitconfig && \
-git config --system --add safe.directory /var/db/repos/gentoo && \
+git config --system safe.directory /var/db/repos/gentoo && \
 git config --file /etc/portage/gitconfig http.sslCAInfo /etc/ssl/certs/4042bcee.0 && \
 git config --file /etc/portage/gitconfig http.sslCAPath /etc/ssl/certs/4042bcee.0 && \
 git config --file /etc/portage/gitconfig http.sslVersion tlsv1.3 && \
@@ -86,6 +86,8 @@ sed -i \
 ```
 
 Execute `dispatch-conf` or `etc-update` and apply the changes to `/etc/portage/repos.conf/gentoo.conf`.
+
+> ⚠️ For the (initial) clone, make sure that `* Trusted signature found on top commit` is printed out! ⚠️
 
 As a last step, `/var/db/repos/gentoo` needs to be emptied and Gentoo ebuilds fetched:
 
