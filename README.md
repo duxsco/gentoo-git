@@ -33,6 +33,7 @@ Install and harden `dev-vcs/git`:
 ```bash
 emerge --noreplace dev-vcs/git && \
 git config --system includeIf.gitdir:/var/db/repos/gentoo/.path /etc/portage/gitconfig && \
+git config --system --add safe.directory /var/db/repos/gentoo && \
 git config --file /etc/portage/gitconfig http.sslCAInfo /etc/ssl/certs/4042bcee.0 && \
 git config --file /etc/portage/gitconfig http.sslCAPath /etc/ssl/certs/4042bcee.0 && \
 git config --file /etc/portage/gitconfig http.sslVersion tlsv1.3 && \
@@ -46,6 +47,8 @@ The resulting configuration should look like:
 ➤ cat /etc/gitconfig
 [includeIf "gitdir:/var/db/repos/gentoo/"]
 	path = /etc/portage/gitconfig
+[safe]
+	directory = /var/db/repos/gentoo
 
 ➤ cat /etc/portage/gitconfig
 [http]
@@ -88,6 +91,7 @@ As a last step, `/var/db/repos/gentoo` needs to be emptied and Gentoo ebuilds fe
 
 ```bash
 find /var/db/repos/gentoo -maxdepth 1 -mindepth 1 -exec rm -rf {} + && \
+chown portage:portage /var/db/repos/gentoo && \
 qlist --installed app-portage/eix >/dev/null 2>&1 && \
 eix-sync || \
 emerge --sync
