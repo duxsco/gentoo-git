@@ -31,7 +31,7 @@ emerge -1 sys-apps/portage
 Install and harden `dev-vcs/git`:
 
 ```bash
-emerge --noreplace dev-vcs/git && \
+emerge --select --noreplace dev-vcs/git && \
 git config --system includeIf.gitdir:/var/db/repos/gentoo/.path /etc/portage/gitconfig && \
 git config --file /etc/portage/gitconfig http.sslCAInfo /etc/ssl/certs/4042bcee.0 && \
 git config --file /etc/portage/gitconfig http.sslCAPath /etc/ssl/certs/4042bcee.0 && \
