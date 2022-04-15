@@ -91,8 +91,6 @@ As a last step, `/var/db/repos/gentoo` needs to be emptied and Gentoo ebuilds fe
 ```bash
 find /var/db/repos/gentoo -maxdepth 1 -mindepth 1 -exec rm -rf {} + && \
 chown portage:portage /var/db/repos/gentoo && \
-qlist --installed app-portage/eix >/dev/null 2>&1 && \
-eix-sync || \
 emerge --sync
 ```
 
