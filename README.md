@@ -82,7 +82,7 @@ sed -i \
     /etc/portage/repos.conf/._cfg0000_gentoo.conf; echo $?
 ```
 
-Execute `dispatch-conf` or `etc-update` and apply the changes to `/etc/portage/repos.conf/gentoo.conf`.
+Execute `dispatch-conf` or `etc-update` and apply the changes to `/etc/portage/repos.conf/gentoo.conf` that way.
 
 > ⚠️ For the (initial) clone, make sure that `* Trusted signature found on top commit` is printed out! ⚠️
 
