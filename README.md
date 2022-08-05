@@ -16,6 +16,12 @@ git config --file /etc/portage/gitconfig protocol.allow never && \
 git config --file /etc/portage/gitconfig protocol.https.allow always; echo $?
 ```
 
+If you use `>=dev-vcs/git-2.35.2` you need in addition:
+
+```bash
+git config --system safe.directory /var/db/repos/gentoo
+```
+
 The resulting configuration should look like:
 
 ```
