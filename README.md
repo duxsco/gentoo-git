@@ -4,30 +4,6 @@
 
 Portage provides [three official ways](https://wiki.gentoo.org/wiki/Project:Portage/Repository_verification) to fetch Gentoo ebuilds. While `rsync` saves network traffic, `webrsync` supports downloads over HTTPS. The following Git-based approach tries to combine the efficiency of `rsync` with the security of `webrsync`.
 
-First, we have to patch `sys-apps/portage` in order to avoid running in following problem that may occur during the merge reset after the shallow fetch:
-
-![Git issue](assets/issue.png)
-
-Verify the patch (copy&paste one after the other):
-
-```bash
-# Fetch the public key; ADJUST THE MAIL ADDRESS!
-gpg --auto-key-locate clear,dane,wkd,hkps://keys.duxsco.de --locate-external-key d at "my github username" dot de
-
-gpg --verify git.patch.sha512.asc git.patch.sha512
-
-sha512sum -c git.patch.sha512
-```
-
-[Save the patch](https://wiki.gentoo.org/wiki//etc/portage/patches) and rebuild `sys-apps/portage`:
-
-```bash
-mkdir -p /etc/portage/patches/sys-apps/portage && \
-rsync -av git.patch /etc/portage/patches/sys-apps/portage/ && \
-chown root: /etc/portage/patches/sys-apps/portage/git.patch && \
-emerge -1 sys-apps/portage
-```
-
 Install and harden `dev-vcs/git`:
 
 ```bash
