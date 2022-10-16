@@ -1,7 +1,5 @@
 # Secure, Git-based Gentoo ebuild retrieval
 
-> ⚠️ The following solution might not be desired on squashfs/overlayfs systems due to additional disk writes a Git hard reset incurs! ⚠️
-
 Portage provides [three official ways](https://wiki.gentoo.org/wiki/Project:Portage/Repository_verification) to fetch Gentoo ebuilds. While `rsync` saves network traffic, `webrsync` supports downloads over HTTPS. The following Git-based approach tries to combine the efficiency of `rsync` with the security of `webrsync`.
 
 Install and harden `dev-vcs/git`:
