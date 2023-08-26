@@ -1,6 +1,17 @@
 # Secure, Git-based Gentoo ebuild retrieval
 
-> ️⚠️ You can find information on my GnuPG public key in my [GitHub profile README](https://github.com/duxsco/)! ⚠️
+```
+  ______________________________________
+/ This repo has been archived!           \
+| Its successor is at:                   |
+\ https://codeberg.org/duxsco/gentoo-git /
+  --------------------------------------
+         \   ^__^
+          \  (oo)\_______
+             (__)\       )\/\
+                 ||----w |
+                 ||     ||
+```
 
 Portage provides [three official ways](https://wiki.gentoo.org/wiki/Project:Portage/Repository_verification) to fetch Gentoo ebuilds. While `rsync` saves network traffic, `webrsync` supports downloads over HTTPS. The following Git-based approach tries to combine the efficiency of `rsync` with the security of `webrsync`.
 
